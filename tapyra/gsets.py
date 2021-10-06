@@ -12,7 +12,7 @@ import gseapy as gp
 
 from tapyra.auxiliary import invert_dict
 
-ref_path = os.path.dirname(__file__)
+ref_path = os.path.join(os.path.dirname(__file__),'ref/')
 
 def gset_as_dict(subsel=None, ref=None):
 
@@ -33,7 +33,7 @@ def gset_as_dict(subsel=None, ref=None):
     """
 
     if ref is None:
-        ref = os.path.join(ref_path,'ref/all_gsets.gmt')
+        ref = os.path.join(ref_path,'all_gsets.gmt')
         
     with open(ref, 'r') as gmt:
         gset_list = [d.split('\t') for d in gmt.read().split('\n')]
@@ -110,7 +110,7 @@ def run_gsea(df, subsel=None, type='gsea', ref=None, tmp_path=r'./tmp_gsea', **k
         os.makedirs(tmp_path)
 
     if ref is None:
-        ref = os.path.join(ref_path,'ref/all_gsets.gmt')
+        ref = os.path.join(ref_path,'all_gsets.gmt')
 
     """ Set up gene sets files, select relevant sets. """
 

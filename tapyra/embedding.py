@@ -97,8 +97,8 @@ def get_umap(vals, collinear_thresh=None, var_drop_thresh=None, n_neighbors='sqr
     if n_neighbors=='sqrt':
         n_neighbors = int(np.sqrt(vals_cut.shape[0]))
 
-    mapping     = umap.UMAP(n_neighbors=n_neighbors, **kwargs)
-    trained_map = mapping.fit(vals_cut)
+    mapping       = umap.UMAP(n_neighbors=n_neighbors, **kwargs)
+    trained_map   = mapping.fit(vals_cut)
     proj          = pd.DataFrame(mapping.transform(vals_cut))
 
     return proj - proj.mean(), trained_map

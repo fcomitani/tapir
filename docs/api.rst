@@ -35,6 +35,15 @@ Gene Sets Enrichment Analysis
     :undoc-members:
     :show-inheritance:
 
+Immune Deconvolution
+--------------------
+
+.. automodule:: immune
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
 Plotting
 ---------
 

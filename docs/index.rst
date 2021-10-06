@@ -27,6 +27,7 @@ gene sets enrichment analysis.
    de.rst
    stats.rst
    gsets.rst
+   immune.rst
 
 .. toctree::
    :maxdepth: 1

@@ -24,6 +24,7 @@ This library includes
 * differential expression analysis with [EdgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html)
 * gene sets enrichment analysis with [gseapy](https://github.com/zqfang/GSEApy)
 * survival analysis with [lifelines](https://github.com/CamDavidsonPilon/lifelines)
+* immune deconvolution with [MCPcounter](https://github.com/ebecht/MCPcounter)
 * dimensionality reduction with [UMAP](https://github.com/lmcinnes/umap)
 * plotting functions for distribution comparisons, heatmaps and gene sets networks.
 
@@ -43,7 +44,7 @@ Besides basic scientific and plotting libraries, the current version requires
 - umap-learn
 ```
 
-** R and EdgeR need to be installed independently. **
+** R, EdgeR and MCPcounter need to be installed independently. **
 
 ### Installation
 

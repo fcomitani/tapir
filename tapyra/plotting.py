@@ -86,17 +86,16 @@ def plot_distribution(df, groups, labs, up_feat, dw_feat=None, save_file=None):
         max_x = np.max([np.max(gp) for gp in gps])
         x     = np.arange(min_x, max_x, 0.01)
 
-        vals = []
         for i,g in enumerate(groups):
             
             posy = len(groups)-i
 
+            customp = Palettes.midpalmap(int((meds[i]-min_med)*1.0/
+                                    (max_med-min_med)*1000))
+
             try:
 
                 """ Calculate KDE and plot. """
-
-                customp = Palettes.midpalmap(int((meds[i]-min_med)*1.0/
-                                        (max_med-min_med)*1000))
 
                 kde = gaussian_kde(gps[i], bw_method=None)
                 y   = kde.evaluate(x)
