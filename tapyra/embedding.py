@@ -5,6 +5,7 @@ F. Comitani     @2021
 """
 
 import os
+import copy
 
 import numpy as np
 import pandas as pd
@@ -87,7 +88,7 @@ def get_umap(vals, collinear_thresh=None, var_drop_thresh=None, n_neighbors='sqr
             trained_map (UMAP): the trained UMAP object.
     """
 
-    vals_cut=vals.copy(deep=True)
+    vals_cut=copy.deepcopy(vals)
 
     if collinear_thresh is not None:
         vals_cut = remove_collinear(vals_cut, thresh=collinear_thresh)
