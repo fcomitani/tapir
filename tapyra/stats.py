@@ -16,6 +16,8 @@ from scipy.stats import kruskal as kw
 from scipy.stats import chisquare as chi2
 from scipy.stats import fisher_exact as fet
 
+import scikit_posthocs as sp
+
 from statsmodels.stats.multitest import multipletests
 
 from lifelines import KaplanMeierFitter
@@ -80,8 +82,8 @@ def compare(gene, classes):
                     ratio.append(np.min([np.abs(meds[i]/meds[j])]))
                     diff.append(np.abs(meds[i]-meds[j]))
 
-        if len(minratio) == 0:
-            minratio = np.nan
+        if len(ratio) == 0:
+            ratio    = np.nan
             diff     = np.nan
         else:
             ratio = np.min(ratio)
