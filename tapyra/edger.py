@@ -51,7 +51,7 @@ def build_dgelist(tab):
 
 	return dgelist, tmmlog.T
 
-def diff_exp(dgelist, groups, filter=False, min_count=2, min_total_count=3):
+def diff_exp(dgelist, groups, batches=None, filter=False, min_count=2, min_total_count=3):
 
 	""" Runs a differential expression analysis with edgeR on a given DGElist.
 
@@ -61,6 +61,10 @@ def diff_exp(dgelist, groups, filter=False, min_count=2, min_total_count=3):
             groups (pandas dataframe): a single-column dataframe containing information
 				on the groups to compare. Samples are as rows, "group" is the only column
 				and contains the groups membership for each sample encoded as integers.
+            batches (pandas dataframe): a single-column dataframe containing information
+				on the batches. Samples are as rows, "batch" is the only column
+				and contains the batch membership for each sample encoded as integers
+				(optional, defaul None).
             filter (bool): if True, filter genes with counts lower than a set threshold,
 				(defualt False)
 			min_count (int): minimum number of per-group counts when filtering genes.
@@ -73,21 +77,42 @@ def diff_exp(dgelist, groups, filter=False, min_count=2, min_total_count=3):
 			flase discovery ratio.
 	"""
 
-	""" Convert input groups dataframe to R. """
+	
+	""" Setup input dataframe and constants. """
 
 	groups_tmp = groups.reset_index()
 	groups_tmp.columns = ['samples','group']
+
+	numcols=2
+	formula='~groups'
+
+	if batches is not None:
+		
+		""" If provided, add batch information. """
+
+		batches_tmp = batches.reset_index(drop=True)
+		groups_tmp = pd.concat([groups_tmp,batches_tmp],axis=1)
+		groups_tmp.columns = ['samples','group','batch']
+		
+		numcols+=1
+		formula+='+batches'
+
+	""" Convert input groups dataframe to R. """
+
 	with localconverter(ro.default_converter + pandas2ri.converter):
 		groupsr = ro.conversion.py2rpy(groups_tmp)
 
-	""" Add groups and subset the DGElist if necessary. """
 
+	""" Add groups and subset the DGElist if necessary. """
+	
 	dgelist[1] = base.merge(x = groupsr, y = dgelist.rx2('samples'), by = "samples", **{'all.x' : True})
 	dgelist[0] = base.subset(dgelist[0], select=dgelist[1][0])
 
+	""" Clean up columns name and select only relevant columns. """
+
 	base.colnames(dgelist[1])[1] = 'group'
-	dgelist[1]=base.subset(dgelist[1],select=base.colnames(dgelist[1])[:2]+
-										base.colnames(dgelist[1])[3:])
+	dgelist[1]=base.subset(dgelist[1],select=base.colnames(dgelist[1])[:numcols]+
+										base.colnames(dgelist[1])[numcols+1:])
 
 	""" Filter low expression genes if requested. """
 
@@ -97,9 +122,13 @@ def diff_exp(dgelist, groups, filter=False, min_count=2, min_total_count=3):
 
 	""" Build the design matrix. """
 
-	fmla = ro.Formula('~groups')
+	fmla = ro.Formula(formula)
 	env = fmla.environment
 	env['groups'] = dgelist.rx2('samples').rx2('group')
+
+	if batches is not None:
+		env['batches'] = dgelist.rx2('samples').rx2('batch')
+
 	design=stats.model_matrix(fmla)
 	set_method = ro.r("`colnames<-`")
 	design = set_method(design, base.make_names(base.levels(dgelist.rx2('samples').rx2('group'))))
