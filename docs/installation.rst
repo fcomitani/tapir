@@ -10,7 +10,7 @@ Installation
 
    .. code-block:: bash
 
-      pip install tapir
+      pip install tapir-rna
 
 To install the latest (unreleased) version 
 you can download it from our GitHub repository by running 

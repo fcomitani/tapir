@@ -12,13 +12,14 @@
 #
 import os
 import sys
+sys.path.insert(0, os.path.abspath('../'))
 sys.path.insert(0, os.path.abspath('../tapir'))
 
 # -- Project information -----------------------------------------------------
 
 project = 'tapir'
-copyright = '2021-2022, Federico Comitani, Josh Oren Nash'
-author = 'Federico Comitani, Josh Oren Nash'
+copyright = '2022, Federico Comitani and Josh Oren NAsh'
+author = 'Federico Comitani'
 
 # The full version, including alpha/beta/rc tags
 release = '0.1.0'
@@ -30,9 +31,9 @@ version = '0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.napoleon',
     'sphinx.ext.autodoc',
     'sphinx.ext.coverage',
-    'sphinx.ext.napoleon',
     'sphinx.ext.autosectionlabel',
 ]
 
@@ -46,7 +47,6 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -58,7 +58,7 @@ html_logo = 'figs/logo.png'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = []
 
 def skip(app, what, name, obj, would_skip, options):
     if name == "__init__":

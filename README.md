@@ -48,9 +48,8 @@ Besides basic scientific and plotting libraries, the current version requires
 
 ### Installation
 
-<!--- tapir releases can be easily installed through the python standard package manager  
-`pip install tapir`.
---->
+tapir releases can be easily installed through the python standard package manager  
+`pip install tapir-rna`
 
 To install the latest (unreleased) version you can download it from this repository by running 
  
@@ -71,8 +70,8 @@ significance.
 
 ### Contact us
 
-- federico.comitani@sickkids.ca
-- josh.nash@sickkids.ca
+- federico.comitani at sickkids.ca
+- josh.nash at sickkids.ca
 
 <!--
 ### Citation
