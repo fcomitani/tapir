@@ -13,8 +13,8 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
 import seaborn as sns
 
-from tapyra.gsets import gset_as_dict, connection_matrix_gsets
-from tapyra.embedding import get_umap
+from tapir.gsets import gset_as_dict, connection_matrix_gsets
+from tapir.embedding import get_umap
 
 sns.set_style("darkgrid")
 

@@ -4,7 +4,7 @@ F. Comitani     @2021
 J. O. Nash      @2021
 """
 
-from tapyra._version import __version__
+from tapir._version import __version__
 
 if __name__ == "__main__":
 

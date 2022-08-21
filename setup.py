@@ -3,7 +3,7 @@ from codecs import open
 from os import path
 
 here    = path.abspath(path.dirname(__file__))
-version = open("tapyra/_version.py").readlines()[-1].split()[-1].strip("\"'")
+version = open("tapir/_version.py").readlines()[-1].split()[-1].strip("\"'")
 
 with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
@@ -11,7 +11,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
 
-    name='tapyra',
+    name='tapir',
 
     version=version,
 
@@ -32,6 +32,7 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python'
         'Programming Language :: Python :: 3.7'
+        'Programming Language :: Python :: 3.8'
 		],
 
     keywords='clustering recursion dimension-reduction k-NN hiearchical-clustering optimal-clusters differential-evolution',

@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 import gseapy as gp
 
-from tapyra.auxiliary import invert_dict
+from tapir.auxiliary import invert_dict
 
 ref_path = os.path.join(os.path.dirname(__file__),'ref/')
 

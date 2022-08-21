@@ -18,7 +18,7 @@ equivalent to the flags in :code:`EdgeR.filterByExpr`.
 
 .. code-block:: python
 
-  from tapyra.edger import build_dgelist, diff_exp
+  from tapir.edger import build_dgelist, diff_exp
 
   dgelist, tmmlog = build_dgelist(input_table)
   de              = diff_exp(dgelist, groups, filter=True)

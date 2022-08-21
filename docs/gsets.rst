@@ -11,7 +11,7 @@ the :code:`type`.
 
 .. code-block:: python
 
-  from tapyra.gsets import run_gsea
+  from tapir.gsets import run_gsea
 
   gsmat = run_gsea(data, subsel=None, type='ssgsea', tmp_path=r'./tmp_gsea')
   
@@ -39,7 +39,7 @@ a certain percentage relative to the highest connection value observed.
 
 .. code-block:: python
 
-  from tapyra.plotting import plot_genes_network
+  from tapir.plotting import plot_genes_network
 
   plot_genes_network(gset, subsel, exp=None, cutoff=.1, save_file='./net.png')
 

@@ -24,7 +24,7 @@ def build_dgelist(tab):
 	""" Builds a DGE list and normalizes counts as TMM. 
 
         Args:
-            tab (pandas dataframe): expression counts matrix with samples as row and 
+            tab (pandas dataframe): expression counts matrix with samples as rows and 
 				genes as columns.
 		Returns:
 			dgelist (edgeR DGElist): a composite dataframe with samples and expression

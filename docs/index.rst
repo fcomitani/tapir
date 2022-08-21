@@ -5,7 +5,7 @@
 Welcome to tapir's documentation!
 ===================================
 
-Transcriptome Analysis in Python Imported from R (tapir) is a python 3 package for the statistical analysis of expression data.
+Transcriptome Analysis in Python Imported from R (`tapir`) is a python 3 package for the statistical analysis of expression data.
 It includes a number of analysis and plotting utilities, which include differential expression functions imported from EdgeR and
 gene sets enrichment analysis.
 

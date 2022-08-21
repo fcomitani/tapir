@@ -11,7 +11,7 @@
 [![Build Status](https://img.shields.io/travis/com/fcomitani/tapir/main?style=flat-square)](https://travis-ci.com/fcomitani/tapir)
 -->
 
-tapir (`tapyra` in Tupi) is a python 3 package for the analysis of gene expression data.
+`tapir` is a python 3 package for the analysis of gene expression data.
 It includes a number of functions for statistical analysis, differential expression
 and gene sets enrichment analysis.
 
@@ -49,7 +49,7 @@ Besides basic scientific and plotting libraries, the current version requires
 ### Installation
 
 <!--- tapir releases can be easily installed through the python standard package manager  
-`pip install tapyra`.
+`pip install tapir`.
 --->
 
 To install the latest (unreleased) version you can download it from this repository by running 
@@ -64,7 +64,7 @@ Given an `input` dataset in pandas-like format (samples X genes), the `build_dge
 the samples as TMM and fit a glmQL model for differential expression
 significance.
 
-    from tapyra.edger import build_dgelist, diff_exp
+    from tapir.edger import build_dgelist, diff_exp
 
     dgelist, tmmlog = build_dgelist(input_table)
     de              = diff_exp(dgelist, groups, filter=True)

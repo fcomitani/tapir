@@ -12,12 +12,12 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../tapyra'))
+sys.path.insert(0, os.path.abspath('../tapir'))
 
 # -- Project information -----------------------------------------------------
 
 project = 'tapir'
-copyright = '2021, Federico Comitani, Josh Oren Nash'
+copyright = '2021-2022, Federico Comitani, Josh Oren Nash'
 author = 'Federico Comitani, Josh Oren Nash'
 
 # The full version, including alpha/beta/rc tags

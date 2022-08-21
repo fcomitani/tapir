@@ -19,7 +19,7 @@ for the multiple testing correction.
 
 .. code-block:: python
 
-  from tapyra.stats import multicompare
+  from tapir.stats import multicompare
 
   stats, dunn = multicompare(groups, membership, data, 
         cutoff=1, multi_method='fdr_tsbh', multi_alpha=0.05)
@@ -37,7 +37,7 @@ Contingency tables can be built and related tests can be run with TAPIR.
 
 .. code-block:: python
 
-  form tapyra.stats import get_contingency, test_contingency
+  form tapir.stats import get_contingency, test_contingency
 
   contab = get_contingency(series, groups, membership)
   stats  = test_contingency(contab, method='auto')
@@ -69,8 +69,8 @@ a one-hot-encoded matrix with groups :code:`membership`.
 
 .. code-block:: python
 
-  from tapyra.stats import st_curves
-  from tapyra.plotting import plot_survival
+  from tapir.stats import st_curves
+  from tapir.plotting import plot_survival
 
   stats, curves = st_curves(st_stats, groups, membership)
   plot_survival(curves, xlab='Years', ylab='OST', save_file='./plot.png')
@@ -100,8 +100,8 @@ by providing the appropriate UMAP object keywords.
 
 .. code-block:: python
 
-  from tapyra.embedding import get_umap
-  from tapyra.plotting import plot_clusters
+  from tapir.embedding import get_umap
+  from tapir.plotting import plot_clusters
 
   proj, mappa = get_umap(data, collinear_thresh=None, var_drop_thresh=.99)
   proj.index  = data.index
@@ -128,7 +128,7 @@ This function allows to plot on one (:code:`genes_up`) or two levels
 
 .. code-block:: python
 
-  from tapyra.plotting import plot_distribution
+  from tapir.plotting import plot_distribution
 
   plot_distribution(data, groups, membership, 
     genes_up, genes_dw,
@@ -142,7 +142,7 @@ with :code:`plot_heatmap`
 
 .. code-block:: python
 
-  from tapyra.plotting import plot_heatmap
+  from tapir.plotting import plot_heatmap
 
   plot_heatmap(data, groups, membership, genes, 
     clab='log$_2$(TPM+1)', 

@@ -8,13 +8,13 @@ an expression matrix :code:`tmm` with samples as rows and genes as columns.
 
 .. code-block:: python
 
-  from tapyra.immune import mcpc_estimate
+  from tapir.immune import mcpc_estimate
 
   estimates = mcpc_estimate(tmm)
 
 
 For details on the deconvolution process, please see the MCPcounter
-publication [Becth2016]_.
+publication [Becht2016]_.
 
 References
 ----------

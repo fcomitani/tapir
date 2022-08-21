@@ -23,7 +23,7 @@ from statsmodels.stats.multitest import multipletests
 from lifelines import KaplanMeierFitter
 from lifelines.statistics import multivariate_logrank_test as mlt
 
-from tapyra.auxiliary import smart_selection
+from tapir.auxiliary import smart_selection
 
 def compare(gene, classes):
 
