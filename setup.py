@@ -30,8 +30,8 @@ setup(
         'Intended Audience :: Science/Research',
         'Topic :: Scientific/Engineering',
         'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python'
-        'Programming Language :: Python :: 3.7'
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8'
 		],
 

@@ -4,6 +4,8 @@
 ## Transcriptome Analysis in Python Imported from R
 ### v 0.1
 
+[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/fcomitani/tapir)](https://github.com/fcomitani/tapir/releases/tag/v0.1.0)
+[![PyPI](https://img.shields.io/pypi/v/tapir-rna)](https://pypi.org/project/tapir-rna/)
 [![Licence](https://img.shields.io/github/license/fcomitani/tapir?style=flat-square)](https://github.com/fcomitani/tapir/blob/main/LICENSE)
 [![GitHub top language](https://img.shields.io/github/languages/top/fcomitani/tapir?style=flat-square)](https://github.com/fcomitani/tapir/search?l=python)
 [![Documentation Status](https://readthedocs.org/projects/tapir/badge/?version=latest&style=flat-square)](https://tapir.readthedocs.io/en/latest/?badge=latest)
